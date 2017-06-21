@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -93,7 +93,7 @@
 <li>在 scripts資料夾底下新增一個 .js檔案，檔案內容如下<br><code>var exec = require(‘child_process’).exec;<br>hexo.on(‘new’, function(data) {<br> exec(‘start “<font color="red">C:\Users\XXX\AppData\Roaming\Haroo Studio\Haroopad\haroopad.exe</font>“ ‘+ data.path);<br>});</code></li>
 <li>在 Git Bash執行 $ hexo new指令看看</li>
 </ol>
-<p>一開始我執行的時候都會跑出這段錯誤：<br><img src="/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png" title="Error Message"></p>
+<p>一開始我執行的時候都會跑出這段錯誤：<br><img src="/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png" alt="Error Message" title="Error Message"><br>最後找出錯誤是因為我在程式碼最後  }); 又隔一行然後放了註解 …</p>
 <p><em>Ref:</em></p>
 <ul>
 <li><a href="https://hexo.io/zh-tw/docs/plugins.html" target="_blank" rel="external">外掛 | Hexo</a></li>
@@ -103,7 +103,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj4759mpr0001oshd59t21yio" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj475kn74000168hdxsz1ayrb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -169,7 +169,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" data-id="cj4759mpr0000oshdg4zkefi5" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" data-id="cj475kn6o000068hdtgk79z5b" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -191,7 +191,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
@@ -201,7 +201,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
     </div>
@@ -220,7 +220,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -245,7 +245,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Mortiz Hsu<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

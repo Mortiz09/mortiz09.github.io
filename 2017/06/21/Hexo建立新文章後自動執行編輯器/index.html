@@ -12,12 +12,12 @@
 <meta property="og:url" content="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/index.html">
 <meta property="og:site_name" content="Mortiz&#39;s Square">
 <meta property="og:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
-<meta property="og:image" content="http://yoursite.com/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
-<meta property="og:updated_time" content="2017-06-21T15:15:07.014Z">
+<meta property="og:image" content="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
+<meta property="og:updated_time" content="2017-06-21T15:30:22.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo建立新文章後自動執行編輯器">
 <meta name="twitter:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
-<meta name="twitter:image" content="http://yoursite.com/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
+<meta name="twitter:image" content="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
   
     <link rel="alternate" href="/atom.xml" title="Mortiz&#39;s Square" type="application/atom+xml">
   
@@ -59,9 +59,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -98,7 +98,7 @@
 <li>在 scripts資料夾底下新增一個 .js檔案，檔案內容如下<br><code>var exec = require(‘child_process’).exec;<br>hexo.on(‘new’, function(data) {<br> exec(‘start “<font color="red">C:\Users\XXX\AppData\Roaming\Haroo Studio\Haroopad\haroopad.exe</font>“ ‘+ data.path);<br>});</code></li>
 <li>在 Git Bash執行 $ hexo new指令看看</li>
 </ol>
-<p>一開始我執行的時候都會跑出這段錯誤：<br><img src="/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png" title="Error Message"></p>
+<p>一開始我執行的時候都會跑出這段錯誤：<br><img src="/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png" alt="Error Message" title="Error Message"><br>最後找出錯誤是因為我在程式碼最後  }); 又隔一行然後放了註解 …</p>
 <p><em>Ref:</em></p>
 <ul>
 <li><a href="https://hexo.io/zh-tw/docs/plugins.html" target="_blank" rel="external">外掛 | Hexo</a></li>
@@ -108,7 +108,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj4759mpr0001oshd59t21yio" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj475kn74000168hdxsz1ayrb" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -121,7 +121,7 @@
   
   
     <a href="/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Ancien</strong>
+      <strong class="article-nav-caption">Older</strong>
       <div class="article-nav-title">從零開始使用 Github Page建立 Hexo個人部落格</div>
     </a>
   
@@ -139,7 +139,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Mot-clés</h3>
+    <h3 class="widget-title">Tags</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
@@ -149,7 +149,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Nuage de mot-clés</h3>
+    <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
     </div>
@@ -168,7 +168,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Articles récents</h3>
+    <h3 class="widget-title">Recent Posts</h3>
     <div class="widget">
       <ul>
         
@@ -193,7 +193,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Mortiz Hsu<br>
-      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>
