@@ -52,9 +52,9 @@
       </nav>
       <nav id="sub-nav">
         
-          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="Flux RSS"></a>
         
-        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+        <a id="nav-search-btn" class="nav-icon" title="Rechercher"></a>
       </nav>
       <div id="search-form-wrap">
         <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
@@ -64,6 +64,56 @@
 </header>
       <div class="outer">
         <section id="main">
+  
+    <article id="post-Hexo建立新文章後自動執行編輯器" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2017/06/21/Hexo建立新文章後自動執行編輯器/" class="article-date">
+  <time datetime="2017-06-21T14:38:57.000Z" itemprop="datePublished">2017-06-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2017/06/21/Hexo建立新文章後自動執行編輯器/">Hexo建立新文章後自動執行編輯器</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的<br>這些功夫當然是能省則省</p>
+<ol>
+<li>在 <font color="red">Hexo folder</font>內建立新資料夾 scripts</li>
+<li>在 scripts資料夾底下新增一個 .js檔案，檔案內容如下<br><code>var exec = require(‘child_process’).exec;<br>hexo.on(‘new’, function(data) {<br> exec(‘start “<font color="red">C:\Users\XXX\AppData\Roaming\Haroo Studio\Haroopad\haroopad.exe</font>“ ‘+ data.path);<br>});</code></li>
+<li>在 Git Bash執行 $ hexo new指令看看</li>
+</ol>
+<p>一開始我執行的時候都會跑出這段錯誤：<br><img src="/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png" title="Error Message"></p>
+<p><em>Ref:</em></p>
+<ul>
+<li><a href="https://hexo.io/zh-tw/docs/plugins.html" target="_blank" rel="external">外掛 | Hexo</a></li>
+<li><a href="https://thisis577.github.io/2016/08/05/auto-open-editor-and-browser-after-hexo-new-post/" target="_blank" rel="external">Hexo 建立新文章後自動打開編輯器跟瀏覽器 · A little bird on coding</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj474v6wn000034hd47ayw3sm" class="article-share-link">Partager</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
   
     <article id="post-從零開始使用-Github-Page建立-Hexo個人部落格" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
@@ -87,18 +137,39 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p>1.install node.js<br>2.install git<br>3.create new folder <font color="red">folder</font><br>4.enter <font color="red">folder</font><br>5.right click and select Git Bash Here<br>6.enter command line: $ npm install -g hexo-cli<br>7.enter command line: $ hexo init<br>//8.enter command line: $ npm install<br>9.enter command line: $ hexo server</p>
-<p>go to local page: <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a></p>
-<p>10.enter command line: $ hexo generate (generate at folder “public”)<br>11.modify deploy setting at _config.yml<br>deploy:<br>  type: git<br>  repository: git@github.com:<font color="red">Mortiz09</font>/<font color="red">mortiz09</font>.github.io.git<br>  branch: master<br>12.enter command line: $ npm install hexo-deployer-git –save</p>
-<p>13-1.enter command line: $ git config –global user.name “<font color="red">mortiz09</font>“<br>13-2.enter command line: $ git config –global </p>
-<p>user.email “<font color="red">mortiz09@hotmail.com</font>“<br>13-3.enter command line: $ ssh-keygen -t rsa -C “q90036@hotmail.com”<br>13-4.open C:\Users\<font color="red">Moz</font>.ssh\id_rsa.pub, copy all text<br>13-5.go to github, Settings, SSH and GPG keys<br>13-6.click “New SSH key”, paste to input <key>, click “Add SSH key”<br>(ref: <a href="http://blog.csdn.net/jingtingfengguo/article/details/51892864" target="_blank" rel="external">http://blog.csdn.net/jingtingfengguo/article/details/51892864</a>)</key></p>
-<p>14.enter command line: $ hexo deploy</p>
-<p>15.go to your page: <font color="red"><a href="https://mortiz09.github.io/" target="_blank" rel="external">https://mortiz09.github.io/</a></font></p>
+        <p><strong>replace <font color="red">red text</font> by yourself</strong></p>
+<ol>
+<li>install node.js</li>
+<li>install git</li>
+<li>create new folder <font color="red">Hexo folder</font></li>
+<li>enter <font color="red">Hexo folder</font></li>
+<li>right click and select Git Bash Here</li>
+<li>enter command line: $ npm install -g hexo-cli</li>
+<li>enter command line: $ hexo init</li>
+<li>//enter command line: $ npm install</li>
+<li>enter command line: $ hexo server<br>(go to local page: <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>)</li>
+<li>enter command line: $ hexo generate (generate at folder “public”)</li>
+<li>modify deploy setting at _config.yml<br><code>deploy:<br>type: git<br>repository: git@github.com:<font color="red">Mortiz09</font>/<font color="red">mortiz09</font>.github.io.git<br>branch: master</code></li>
+<li>enter command line: $ npm install hexo-deployer-git –save</li>
+<li>enter command line: $ git config –global user.name “<font color="red">mortiz09</font>“</li>
+<li>enter command line: $ git config –global user.email “<font color="red">xxxxx@hotmail.com</font>“</li>
+<li>enter command line: $ ssh-keygen -t rsa -C “<font color="red">xxxxx@hotmail.com</font>“</li>
+<li>open C:\Users\<font color="red">Moz</font>\.ssh\id_rsa.pub, copy all text</li>
+<li>go to github, Settings, SSH and GPG keys</li>
+<li>click “New SSH key”, paste to input <key>, click “Add SSH key”<br>(13-18 ref: <a href="http://blog.csdn.net/jingtingfengguo/article/details/51892864" target="_blank" rel="external">http://blog.csdn.net/jingtingfengguo/article/details/51892864</a>)</key></li>
+<li>enter command line: $ hexo deploy</li>
+</ol>
+<p>Finally!! Go to your page: <font color="red"><a href="https://mortiz09.github.io/" target="_blank" rel="external">https://mortiz09.github.io/</a></font></p>
+<p><em>Ref:</em></p>
+<ul>
+<li><a href="http://blog.csdn.net/jingtingfengguo/article/details/51892864" target="_blank" rel="external">git遇到的问题之“Please make sure you have the correct access rights and the repository exists.” - jingtingfengguo的博客 - 博客频道 - CSDN.NET</a></li>
+<li><a href="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-%E6%96%87%E7%AB%A0%E5%BE%8C%E5%B9%AB%E4%BD%A0%E9%96%8B%E5%95%9F-MarkDown-%E7%B7%A8%E8%BC%AF%E5%99%A8/" target="_blank" rel="external">Hexo 新增文章後幫你開啟 markdown 編輯器</a></li>
+</ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" data-id="cj46flm0800009kmopt0ekd8r" class="article-share-link">Share</a>
+      <a data-url="http://yoursite.com/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" data-id="cj474v6ws000134hdvx8606sg" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -120,7 +191,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tags</h3>
+    <h3 class="widget-title">Mot-clés</h3>
     <div class="widget">
       <ul class="tag-list"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
     </div>
@@ -130,7 +201,7 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Tag Cloud</h3>
+    <h3 class="widget-title">Nuage de mot-clés</h3>
     <div class="widget tagcloud">
       <a href="/tags/Hexo/" style="font-size: 10px;">Hexo</a>
     </div>
@@ -149,9 +220,13 @@
   
     
   <div class="widget-wrap">
-    <h3 class="widget-title">Recent Posts</h3>
+    <h3 class="widget-title">Articles récents</h3>
     <div class="widget">
       <ul>
+        
+          <li>
+            <a href="/2017/06/21/Hexo建立新文章後自動執行編輯器/">Hexo建立新文章後自動執行編輯器</a>
+          </li>
         
           <li>
             <a href="/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/">從零開始使用 Github Page建立 Hexo個人部落格</a>
@@ -170,7 +245,7 @@
   <div class="outer">
     <div id="footer-info" class="inner">
       &copy; 2017 Mortiz Hsu<br>
-      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+      Propulsé by <a href="http://hexo.io/" target="_blank">Hexo</a>
     </div>
   </div>
 </footer>

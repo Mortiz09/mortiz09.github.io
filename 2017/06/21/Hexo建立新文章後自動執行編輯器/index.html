@@ -3,19 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>從零開始使用 Github Page建立 Hexo個人部落格 | Mortiz&#39;s Square</title>
+  <title>Hexo建立新文章後自動執行編輯器 | Mortiz&#39;s Square</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="replace red text by yourself  install node.js install git create new folder Hexo folder enter Hexo folder right click and select Git Bash Here enter command line: $ npm install -g hexo-cli enter comma">
+  <meta name="description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
-<meta property="og:title" content="從零開始使用 Github Page建立 Hexo個人部落格">
-<meta property="og:url" content="http://yoursite.com/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/index.html">
+<meta property="og:title" content="Hexo建立新文章後自動執行編輯器">
+<meta property="og:url" content="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/index.html">
 <meta property="og:site_name" content="Mortiz&#39;s Square">
-<meta property="og:description" content="replace red text by yourself  install node.js install git create new folder Hexo folder enter Hexo folder right click and select Git Bash Here enter command line: $ npm install -g hexo-cli enter comma">
-<meta property="og:updated_time" content="2017-06-21T14:47:36.121Z">
+<meta property="og:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
+<meta property="og:image" content="http://yoursite.com/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
+<meta property="og:updated_time" content="2017-06-21T15:15:07.014Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="從零開始使用 Github Page建立 Hexo個人部落格">
-<meta name="twitter:description" content="replace red text by yourself  install node.js install git create new folder Hexo folder enter Hexo folder right click and select Git Bash Here enter command line: $ npm install -g hexo-cli enter comma">
+<meta name="twitter:title" content="Hexo建立新文章後自動執行編輯器">
+<meta name="twitter:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
+<meta name="twitter:image" content="http://yoursite.com/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
   
     <link rel="alternate" href="/atom.xml" title="Mortiz&#39;s Square" type="application/atom+xml">
   
@@ -68,10 +70,10 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main"><article id="post-從零開始使用-Github-Page建立-Hexo個人部落格" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-Hexo建立新文章後自動執行編輯器" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
-    <a href="/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" class="article-date">
-  <time datetime="2017-06-21T03:01:41.000Z" itemprop="datePublished">2017-06-21</time>
+    <a href="/2017/06/21/Hexo建立新文章後自動執行編輯器/" class="article-date">
+  <time datetime="2017-06-21T14:38:57.000Z" itemprop="datePublished">2017-06-21</time>
 </a>
     
   </div>
@@ -82,7 +84,7 @@
         
   
     <h1 class="article-title" itemprop="name">
-      從零開始使用 Github Page建立 Hexo個人部落格
+      Hexo建立新文章後自動執行編輯器
     </h1>
   
 
@@ -90,39 +92,23 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <p><strong>replace <font color="red">red text</font> by yourself</strong></p>
+        <p>每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的<br>這些功夫當然是能省則省</p>
 <ol>
-<li>install node.js</li>
-<li>install git</li>
-<li>create new folder <font color="red">Hexo folder</font></li>
-<li>enter <font color="red">Hexo folder</font></li>
-<li>right click and select Git Bash Here</li>
-<li>enter command line: $ npm install -g hexo-cli</li>
-<li>enter command line: $ hexo init</li>
-<li>//enter command line: $ npm install</li>
-<li>enter command line: $ hexo server<br>(go to local page: <a href="http://localhost:4000/" target="_blank" rel="external">http://localhost:4000/</a>)</li>
-<li>enter command line: $ hexo generate (generate at folder “public”)</li>
-<li>modify deploy setting at _config.yml<br><code>deploy:<br>type: git<br>repository: git@github.com:<font color="red">Mortiz09</font>/<font color="red">mortiz09</font>.github.io.git<br>branch: master</code></li>
-<li>enter command line: $ npm install hexo-deployer-git –save</li>
-<li>enter command line: $ git config –global user.name “<font color="red">mortiz09</font>“</li>
-<li>enter command line: $ git config –global user.email “<font color="red">xxxxx@hotmail.com</font>“</li>
-<li>enter command line: $ ssh-keygen -t rsa -C “<font color="red">xxxxx@hotmail.com</font>“</li>
-<li>open C:\Users\<font color="red">Moz</font>\.ssh\id_rsa.pub, copy all text</li>
-<li>go to github, Settings, SSH and GPG keys</li>
-<li>click “New SSH key”, paste to input <key>, click “Add SSH key”<br>(13-18 ref: <a href="http://blog.csdn.net/jingtingfengguo/article/details/51892864" target="_blank" rel="external">http://blog.csdn.net/jingtingfengguo/article/details/51892864</a>)</key></li>
-<li>enter command line: $ hexo deploy</li>
+<li>在 <font color="red">Hexo folder</font>內建立新資料夾 scripts</li>
+<li>在 scripts資料夾底下新增一個 .js檔案，檔案內容如下<br><code>var exec = require(‘child_process’).exec;<br>hexo.on(‘new’, function(data) {<br> exec(‘start “<font color="red">C:\Users\XXX\AppData\Roaming\Haroo Studio\Haroopad\haroopad.exe</font>“ ‘+ data.path);<br>});</code></li>
+<li>在 Git Bash執行 $ hexo new指令看看</li>
 </ol>
-<p>Finally!! Go to your page: <font color="red"><a href="https://mortiz09.github.io/" target="_blank" rel="external">https://mortiz09.github.io/</a></font></p>
+<p>一開始我執行的時候都會跑出這段錯誤：<br><img src="/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png" title="Error Message"></p>
 <p><em>Ref:</em></p>
 <ul>
-<li><a href="http://blog.csdn.net/jingtingfengguo/article/details/51892864" target="_blank" rel="external">git遇到的问题之“Please make sure you have the correct access rights and the repository exists.” - jingtingfengguo的博客 - 博客频道 - CSDN.NET</a></li>
-<li><a href="http://hungjie19.github.io/hexoblog/2015/05/24/hexo-new-%E6%96%87%E7%AB%A0%E5%BE%8C%E5%B9%AB%E4%BD%A0%E9%96%8B%E5%95%9F-MarkDown-%E7%B7%A8%E8%BC%AF%E5%99%A8/" target="_blank" rel="external">Hexo 新增文章後幫你開啟 markdown 編輯器</a></li>
+<li><a href="https://hexo.io/zh-tw/docs/plugins.html" target="_blank" rel="external">外掛 | Hexo</a></li>
+<li><a href="https://thisis577.github.io/2016/08/05/auto-open-editor-and-browser-after-hexo-new-post/" target="_blank" rel="external">Hexo 建立新文章後自動打開編輯器跟瀏覽器 · A little bird on coding</a></li>
 </ul>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://yoursite.com/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" data-id="cj474v6ws000134hdvx8606sg" class="article-share-link">Partager</a>
+      <a data-url="http://yoursite.com/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj474v6wn000034hd47ayw3sm" class="article-share-link">Partager</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Hexo/">Hexo</a></li></ul>
@@ -133,15 +119,11 @@
     
 <nav id="article-nav">
   
-    <a href="/2017/06/21/Hexo建立新文章後自動執行編輯器/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">Récent</strong>
-      <div class="article-nav-title">
-        
-          Hexo建立新文章後自動執行編輯器
-        
-      </div>
-    </a>
   
+    <a href="/2017/06/21/從零開始使用-Github-Page建立-Hexo個人部落格/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Ancien</strong>
+      <div class="article-nav-title">從零開始使用 Github Page建立 Hexo個人部落格</div>
+    </a>
   
 </nav>
 
