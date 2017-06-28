@@ -5,17 +5,17 @@
   
   <title>想要留言的功能 Disqus | Mortiz&#39;s Square</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="參考：為 Hexo 博客加入 Disqus 評論 - 簡書">
+  <meta name="description" content="參考：為 Hexo 博客加入 Disqus 評論 - 簡書 以下包含套用 Bootstrap Blog主題後，需要修改的說明：  申請 Disqus，取得 shortname 開啟 _config.yml，自己找個地找個地方加入 disqus_shortname: mortizhexogitpage 開啟 \themes\bootstrap-blog\layout_partial\footer.e">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="想要留言的功能 Disqus">
 <meta property="og:url" content="https://mortiz09.github.io/2017/06/29/想要留言的功能-Disqus/index.html">
 <meta property="og:site_name" content="Mortiz&#39;s Square">
-<meta property="og:description" content="參考：為 Hexo 博客加入 Disqus 評論 - 簡書">
-<meta property="og:updated_time" content="2017-06-28T16:03:56.930Z">
+<meta property="og:description" content="參考：為 Hexo 博客加入 Disqus 評論 - 簡書 以下包含套用 Bootstrap Blog主題後，需要修改的說明：  申請 Disqus，取得 shortname 開啟 _config.yml，自己找個地找個地方加入 disqus_shortname: mortizhexogitpage 開啟 \themes\bootstrap-blog\layout_partial\footer.e">
+<meta property="og:updated_time" content="2017-06-28T16:26:52.263Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="想要留言的功能 Disqus">
-<meta name="twitter:description" content="參考：為 Hexo 博客加入 Disqus 評論 - 簡書">
+<meta name="twitter:description" content="參考：為 Hexo 博客加入 Disqus 評論 - 簡書 以下包含套用 Bootstrap Blog主題後，需要修改的說明：  申請 Disqus，取得 shortname 開啟 _config.yml，自己找個地找個地方加入 disqus_shortname: mortizhexogitpage 開啟 \themes\bootstrap-blog\layout_partial\footer.e">
   
     <link rel="alternate" href="/atom.xml" title="Mortiz&#39;s Square" type="application/atom+xml">
   
@@ -123,6 +123,13 @@ ga('send', 'pageview');
     <div class="article-entry" itemprop="articleBody">
       
         <p>參考：<a href="http://www.jianshu.com/p/c4f65ebe23ad" target="_blank" rel="external">為 Hexo 博客加入 Disqus 評論 - 簡書</a></p>
+<p>以下包含套用 Bootstrap Blog主題後，需要修改的說明：</p>
+<ol>
+<li>申請 Disqus，取得 shortname</li>
+<li>開啟 _config.yml，自己找個地找個地方加入 disqus_shortname: <font color="red">mortizhexogitpage</font></li>
+<li>開啟 \themes\bootstrap-blog\layout_partial\footer.ejs，將以下程式碼貼到檔案尾巴<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">&lt;% if ((page.layout == &apos;post&apos; || page.layout == &apos;page&apos;) &amp;&amp; config.disqus_shortname &amp;&amp; page.comments)&#123; %&gt;</div><div class="line">    &lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">    var disqus_shortname = &apos;&lt;%= config.disqus_shortname %&gt;&apos;;</div><div class="line">    var disqus_config = function () &#123;</div><div class="line">        this.page.url = &apos;&lt;%= config.url %&gt;/&lt;%= page.path %&gt;&apos;;</div><div class="line">        this.page.identifier = &apos;/&lt;%= page.path %&gt;&apos;;</div><div class="line">        this.page.title = &apos;&lt;%= page.title %&gt;&apos;;</div><div class="line">    &#125;;</div><div class="line">    (function()&#123;</div><div class="line">      var d = document;</div><div class="line">      var dsq = d.createElement(&apos;script&apos;);</div><div class="line">      dsq.type = &apos;text/javascript&apos;;</div><div class="line">      dsq.async = true;</div><div class="line">      dsq.src = &apos;//&apos; + disqus_shortname + &apos;.disqus.com/&lt;% if (page.comments)&#123; %&gt;embed.js&lt;% &#125; else &#123; %&gt;count.js&lt;% &#125; %&gt;&apos;;</div><div class="line">      (d.head || d.body).appendChild(dsq);</div><div class="line">    &#125;)();</div><div class="line">    &lt;/script&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></li>
+<li>在 \themes\bootstrap-blog\layout_partial\post，新增一個 comments.ejs 檔案，並貼上以下程式碼<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">&lt;% if (page.comments)&#123; %&gt;</div><div class="line">&lt;section id=&quot;comment&quot;&gt;</div><div class="line">  &lt;% if(config.disqus_shortname) &#123; %&gt;</div><div class="line">  &lt;div id=&quot;disqus_thread&quot;&gt;</div><div class="line">    &lt;noscript&gt;Please enable JavaScript to view the &lt;a href=&quot;//disqus.com/?ref_noscript&quot;&gt;comments powered by Disqus.&lt;/a&gt;&lt;/noscript&gt;</div><div class="line">  &lt;/div&gt;</div><div class="line">  &lt;% &#125; %&gt;</div><div class="line">&lt;/section&gt;</div><div class="line">&lt;% &#125; %&gt;</div></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
@@ -133,7 +140,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://mortiz09.github.io/2017/06/29/想要留言的功能-Disqus/" data-id="cj4h77r2m0004w4hdxbobjjdj" class="article-share-link">
+      <a data-url="https://mortiz09.github.io/2017/06/29/想要留言的功能-Disqus/" data-id="cj4h7s23e0004gshdn8g5oluj" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -248,9 +255,9 @@ ga('send', 'pageview');
     <script type="text/javascript">
     var disqus_shortname = 'mortizhexogitpage';
     var disqus_config = function () {
-        this.page.url = 'https://mortiz09.github.io/2017/06/28/套用主題-Bootstrap-Blog/';
-        this.page.identifier = '/2017/06/28/套用主題-Bootstrap-Blog/';
-        this.page.title = '套用主題 Bootstrap Blog';
+        this.page.url = 'https://mortiz09.github.io/2017/06/29/想要留言的功能-Disqus/';
+        this.page.identifier = '/2017/06/29/想要留言的功能-Disqus/';
+        this.page.title = '想要留言的功能 Disqus';
     };
     (function(){
       var d = document;

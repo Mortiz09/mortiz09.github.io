@@ -5,18 +5,18 @@
   
   <title>Hexo建立新文章後自動執行編輯器 | Mortiz&#39;s Square</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
+  <meta name="description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下  1234var exec = require(&apos;child_process&apos;).exec;hexo.on(&apos;new&apos;, functi">
 <meta name="keywords" content="Hexo">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Hexo建立新文章後自動執行編輯器">
 <meta property="og:url" content="https://mortiz09.github.io/2017/06/21/Hexo建立新文章後自動執行編輯器/index.html">
 <meta property="og:site_name" content="Mortiz&#39;s Square">
-<meta property="og:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
+<meta property="og:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下  1234var exec = require(&apos;child_process&apos;).exec;hexo.on(&apos;new&apos;, functi">
 <meta property="og:image" content="https://mortiz09.github.io/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
-<meta property="og:updated_time" content="2017-06-21T15:30:22.564Z">
+<meta property="og:updated_time" content="2017-06-28T16:15:57.730Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Hexo建立新文章後自動執行編輯器">
-<meta name="twitter:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下var exec = require(‘child_process’).exec;hexo.on(‘new’, function(dat">
+<meta name="twitter:description" content="每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的這些功夫當然是能省則省  在 Hexo folder內建立新資料夾 scripts 在 scripts資料夾底下新增一個 .js檔案，檔案內容如下  1234var exec = require(&apos;child_process&apos;).exec;hexo.on(&apos;new&apos;, functi">
 <meta name="twitter:image" content="https://mortiz09.github.io/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png">
   
     <link rel="alternate" href="/atom.xml" title="Mortiz&#39;s Square" type="application/atom+xml">
@@ -127,7 +127,10 @@ ga('send', 'pageview');
         <p>每次執行完 $ hexo new後都要去 \source\_posts裡面找出 .md檔，再用編輯器開啟真的是超麻煩的<br>這些功夫當然是能省則省</p>
 <ol>
 <li>在 <font color="red">Hexo folder</font>內建立新資料夾 scripts</li>
-<li>在 scripts資料夾底下新增一個 .js檔案，檔案內容如下<br><code>var exec = require(‘child_process’).exec;<br>hexo.on(‘new’, function(data) {<br> exec(‘start “<font color="red">C:\Users\XXX\AppData\Roaming\Haroo Studio\Haroopad\haroopad.exe</font>“ ‘+ data.path);<br>});</code></li>
+<li>在 scripts資料夾底下新增一個 .js檔案，檔案內容如下</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> exec = <span class="built_in">require</span>(<span class="string">'child_process'</span>).exec;</div><div class="line">hexo.on(<span class="string">'new'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">data</span>) </span>&#123;</div><div class="line">    exec(<span class="string">'start "&lt;font color="red"&gt;C:\Users\XXX\AppData\Roaming\Haroo Studio\Haroopad\haroopad.exe&lt;/font&gt;" '</span>+ data.path);</div><div class="line">&#125;);</div></pre></td></tr></table></figure>
+<ol>
 <li>在 Git Bash執行 $ hexo new指令看看</li>
 </ol>
 <p>一開始我執行的時候都會跑出這段錯誤：<br><img src="/2017/06/21/Hexo建立新文章後自動執行編輯器/hexo_scripts_error_UnexpectedEndOfInput.png" alt="Error Message" title="Error Message"><br>最後找出錯誤是因為我在程式碼最後  }); 又隔一行然後放了註解 …</p>
@@ -146,7 +149,7 @@ ga('send', 'pageview');
     
 
     <footer class="article-footer">
-      <a data-url="https://mortiz09.github.io/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj4h77r2d0001w4hdn4ymo5yc" class="article-share-link">
+      <a data-url="https://mortiz09.github.io/2017/06/21/Hexo建立新文章後自動執行編輯器/" data-id="cj4h7s22z0000gshdr34umu6c" class="article-share-link">
         <i class="fa fa-share"></i> Share
       </a>
       
@@ -268,9 +271,9 @@ ga('send', 'pageview');
     <script type="text/javascript">
     var disqus_shortname = 'mortizhexogitpage';
     var disqus_config = function () {
-        this.page.url = 'https://mortiz09.github.io/2017/06/28/套用主題-Bootstrap-Blog/';
-        this.page.identifier = '/2017/06/28/套用主題-Bootstrap-Blog/';
-        this.page.title = '套用主題 Bootstrap Blog';
+        this.page.url = 'https://mortiz09.github.io/2017/06/29/想要留言的功能-Disqus/';
+        this.page.identifier = '/2017/06/29/想要留言的功能-Disqus/';
+        this.page.title = '想要留言的功能 Disqus';
     };
     (function(){
       var d = document;
